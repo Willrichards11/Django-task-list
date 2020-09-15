@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<html>
+<style>
+body {
+  background-color: #fc9803;
+}
+p {text-align: center;}
+div {text-align: center;}
+form {text-align: center;}
+h3 {text-align: center;}
+.button {
+  padding: 3px 3px;
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 9px #999;
+}
+</style>
+
+<h3>To-Do List</h3>
+
+<form method="POST" action="/">
+    {% csrf_token %}
+    {{form.title}}
+    <input type="submit" name="Create Task">
+</form>
+
+{% for task in tasks %}
+
+<div>
+    <a class="btn btn-sm btn-info" href="{% url 'update_task' task.id %}"> update </a>
+    <a href="{% url 'delete' task.id %}"> delete </a>
+    {% if task.complete == True %}
+    <strike> {{task}} </strike>
+    {% else %}
+    <span> {{task}} </span>
+    {% endif %}
+</div>
+{% endfor %}
+</html>
