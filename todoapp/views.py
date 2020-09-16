@@ -47,3 +47,15 @@ def clearall(request):
             item.delete()
         return redirect('/')
     return render(request, 'tasks/delete_all.html', context)
+
+
+def clearcompleted(request):
+    task = Task.objects.all()
+    context = {'task': task}
+    if request.method == "POST":
+        for item in task:
+            if item.complete:
+                import pdb; pdb.set_trace()
+                item.delete()
+        return redirect('/')
+    return render(request, 'tasks/delete_completed.html', context)
