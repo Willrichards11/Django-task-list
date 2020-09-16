@@ -40,6 +40,10 @@ def deleteTask(request, pk):
 
 
 def clearall(request):
-    task = Task.objects.get()
+    task = Task.objects.all()
     context = {'task': task}
-    return render(request, 'tasks.delete_all.html', context)
+    if request.method == "POST":
+        for item in task:
+            item.delete()
+        return redirect('/')
+    return render(request, 'tasks/delete_all.html', context)
