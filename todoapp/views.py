@@ -33,7 +33,13 @@ def updateTask(request, pk):
 def deleteTask(request, pk):
     item = Task.objects.get(id=pk)
     context = {'item': item}
-    if request.method=="POST":
+    if request.method == "POST":
         item.delete()
         return redirect("/")
     return render(request, 'tasks/delete.html', context)
+
+
+def clearall(request):
+    task = Task.objects.get()
+    context = {'task': task}
+    return render(request, 'tasks.delete_all.html', context)

@@ -8,6 +8,8 @@ p {text-align: center;}
 div {text-align: center;}
 form {text-align: center;}
 h3 {text-align: center;}
+a {text-align: center;}
+
 .button {
   padding: 3px 3px;
   font-size: 12px;
@@ -42,4 +44,7 @@ h3 {text-align: center;}
     {% endif %}
 </div>
 {% endfor %}
+<a href="{% url 'clear' %}"> delete all </a>
+
+
 </html>
