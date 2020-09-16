@@ -4,11 +4,12 @@
 body {
   background-color: #fc9803;
 }
-p {text-align: center;}
+
+<!--p {text-align: center;}-->
 div {text-align: center;}
 form {text-align: center;}
 h3 {text-align: center;}
-a {text-align: center;}
+<!--a {text-align: center;}-->
 
 .button {
   padding: 3px 3px;
@@ -44,7 +45,9 @@ a {text-align: center;}
     {% endif %}
 </div>
 {% endfor %}
+<div>
 <a href="{% url 'clear' %}"> delete all </a>
+</div>
 
 
 </html>
