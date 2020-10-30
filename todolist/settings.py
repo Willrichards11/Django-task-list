@@ -1,3 +1,4 @@
+
 """
 Django settings for todolist project.
 
@@ -25,8 +26,7 @@ SECRET_KEY = 'v6i5lhsmsx3xz(ft48+!lg@z-4xf!3(5nns0qaetwez*df6bbh'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['ec2-52-204-66-198.compute-1.amazonaws.com']
 
 # Application definition
 

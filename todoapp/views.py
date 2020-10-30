@@ -10,7 +10,7 @@ def index(request):
 
     if request.method == "POST":
         form = TaskForm(request.POST)
-        if form.is_valid():
+        if form.is_valid() and len(tasks) < 50:
             form.save()
         return redirect('/')
 
